@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Capabilities version="1.0.0" xmlns="http://www.opengis.net/wmts/1.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd">
+    <ows:ServiceIdentification>
+        <ows:Title>curtkim</ows:Title>
+        <ows:ServiceType>OGC WMTS</ows:ServiceType>
+        <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+    </ows:ServiceIdentification>
+    <ows:ServiceProvider>
+        <ows:ProviderName>curtkim</ows:ProviderName>
+        <ows:ProviderSite xlink:href="https://github.com/curtkim/"/>
+        <ows:ServiceContact/>
+    </ows:ServiceProvider>
+    <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="https://labs.koordinates.com/services;key=d740ea02e0c44cafb70dce31a774ca10/wmts/1.0.0/layer/7328/WMTSCapabilities.xml?">
+                        <ows:Constraint name="GetEncoding">
+                            <ows:AllowedValues>
+                                <ows:Value>KVP</ows:Value>
+                            </ows:AllowedValues>
+                        </ows:Constraint>
+                    </ows:Get>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+    </ows:OperationsMetadata>
+    <Contents>
+        <Layer>
+            <ows:Title>Kakao Road</ows:Title>
+            <ows:Abstract>Kakao Road</ows:Abstract>
+            <ows:Identifier>road</ows:Identifier>
+            <ows:BoundingBox crs="urn:ogc:def:crs:EPSG::5181">
+                <ows:LowerCorner>-1078576 -584288</ows:LowerCorner>
+                <ows:UpperCorner>1542864, 1512864</ows:UpperCorner>
+            </ows:BoundingBox>
+            <ows:WGS84BoundingBox crs="urn:ogc:def:crs:OGC:2:84">
+                <ows:LowerCorner>123.000000 35.000000</ows:LowerCorner>
+                <ows:UpperCorner>131.000000 39.000000</ows:UpperCorner>
+            </ows:WGS84BoundingBox>
+            <Style isDefault="true">
+                <ows:Title>Weighted point styles</ows:Title>
+                <ows:Identifier>style=39</ows:Identifier>
+            </Style>
+            <Format>image/png</Format>
+            <InfoFormat>application/json</InfoFormat>
+            <InfoFormat>text/html</InfoFormat>
+            <TileMatrixSetLink>
+                <TileMatrixSet>EPSG:5181</TileMatrixSet>
+            </TileMatrixSetLink>
+						<ResourceURL format="image/png" resourceType="tile" template="https://map1.daumcdn.net/map_2d_hd/2303ksn/L{TileMatrix}/{TileRow}/{TileCol}.png"/>
+        </Layer>
+        <TileMatrixSet>
+            <ows:Title>KakaoMapTileCompatible</ows:Title>
+            <ows:Abstract>The unknown tile matrix set</ows:Abstract>
+            <ows:Identifier>EPSG:5181</ows:Identifier>
+            <ows:BoundingBox crs="urn:ogc:def:crs:EPSG::5181">
+                <ows:LowerCorner>-1078576 -584288</ows:LowerCorner>
+                <ows:UpperCorner>1542864 1512864</ows:UpperCorner>
+            </ows:BoundingBox>
+            <ows:SupportedCRS>urn:ogc:def:crs:EPSG::5181</ows:SupportedCRS>
+						<!--
+            <WellKnownScaleSet>urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible</WellKnownScaleSet>
+						-->
+            <TileMatrix>
+                <ows:Identifier>14</ows:Identifier>
+                <ScaleDenominator>2048</ScaleDenominator>
+                <TopLeftCorner>-30000 -60000</TopLeftCorner>
+                <TileWidth>512</TileWidth>
+                <TileHeight>512</TileHeight>
+                <MatrixWidth>3</MatrixWidth>
+                <MatrixHeight>2</MatrixHeight>
+            </TileMatrix>
+        </TileMatrixSet>
+    </Contents>
+    <ServiceMetadataURL xlink:href="https://labs.koordinates.com/services;key=d740ea02e0c44cafb70dce31a774ca10/wmts/1.0.0/layer/7328/WMTSCapabilities.xml"/>
+</Capabilities>
